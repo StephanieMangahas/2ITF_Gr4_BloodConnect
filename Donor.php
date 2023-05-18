@@ -91,16 +91,6 @@
       .content {
         margin-left: 0;
       }
-
-       .navlinks{
-            list-style: none;
-        }
-
-        .navlinks li{
-            display: inline-block;
-            padding: 0px 20px;
-        }
-
     }
     
   </style>
@@ -137,26 +127,48 @@
 <body>
   <header>
     <h1>BloodConnect</h1>
-    <a href="login.php" class="logout-button">Logout</a>
+    <a href="login.html" class="logout-button">Logout</a>
     <!--**login.html (sample of link to return to login file**-->
   </header>
   
   <div class="sidebar">
     <h2>Records</h2>
-    <nav>
-      <ul class="navlinks">
+    <ul>
       <li><a href="Homepage.html" class="button">Home</a></li>
+            <!-- <li><a href="#" onclick="displayWelcomeMessage();" class="button">Admin</a></li> --> <!--**extre button for add-on**-->
       <li><a href="Donor.php" class="button">Donor</a></li> <!--**Will display the user forms**-->
+        <li><a href="#" class="button">Patient</a></li> <!--**Login records or registers?**-->
       <li><a href="#" onclick="displayRequests();" class="button">Blood Requests</a></li> <!--**Display lang**-->
-                <!-- <li><a href="#" onclick="displayWelcomeMessage();" class="button">Admin</a></li> --> <!--**extre button for add-on**-->
-                <!--<li><a href="#" class="button">Patient</a></li> **Login records or registers?**-->
     </ul>
-    </nav>
   </div>
   
   <div class="content" id="content">
-    <h2>Welcome to the Admin or Hospital Database Center!</h2>
-    <p>This is the Hospital Admin.</p>
-  </div>
+    <h2>Donor Information</h2>
+    <?php
+        $conn = mysqli_connect('localhost', 'root', '', 'donation') or die("Connection Failed" . mysqli_connect_error());
+        $sql = "SELECT * FROM form";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            echo '<table>';
+            echo '<tr><th>First Name</th><th>Last Name</th><th>Age</th><th>Sex</th><th>Blood Type</th><th>Address</th><th>Date</th></tr>';
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<tr>';
+                echo '<td>' . $row['firstname'] . '</td>';
+                echo '<td>' . $row['lastname'] . '</td>';
+                echo '<td>' . $row['age'] . '</td>';
+                echo '<td>' . $row['sex'] . '</td>';
+                echo '<td>' . $row['bloodtype'] . '</td>';
+                echo '<td>' . $row['address'] . '</td>';
+                echo '<td>' . $row['date'] . '</td>';
+                echo '</tr>';
+            }
+            echo '</table>';
+        } else {
+            echo 'No records found.';
+        }
+      
+        mysqli_close($conn);
+        ?>
+    </div>
 </body>
 </html>
