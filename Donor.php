@@ -79,7 +79,25 @@
       box-sizing: border-box;
       margin-left: 200px;
     }
-    
+
+    /*Table Styles */
+    table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        table th,
+        table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        
     /* Responsive Styles */
     @media only screen and (max-width: 600px) {
       .sidebar {
