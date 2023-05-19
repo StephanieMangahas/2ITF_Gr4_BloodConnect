@@ -16,7 +16,7 @@
         </nav>
 
         <div class="login-container">
-        <a href="Homepage.html"> <- Home</a>
+        <a href="Homepage2.html"> <- Home</a>
 
         <h2>Login to the Portal</h2>
         

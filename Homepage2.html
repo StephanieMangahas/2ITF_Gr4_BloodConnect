@@ -22,10 +22,10 @@
             <h1 class = "F">Blood Donation Form</h1>
             <p style=" text-align: center; margin-bottom: 20px;">Thank you for your interest in donating blood and making a difference in someone's life. Your generous contribution can help save lives. 
                 <br>Please provide the following information:</p>
-            <form action="submit.php" method="post">
-                <input type="text" id="first-name" name="first-name" placeholder="First Name" required><br><br>
+            <form action="donationForm.php" method="POST">
+                <input type="text" id="firstname" name="firstname" placeholder="First Name" required><br><br>
 
-                <input type="text" id="last-name" name="last-name" placeholder="Last Name" required><br><br>
+                <input type="text" id="lastname" name="lastname" placeholder="Last Name" required><br><br>
             
                 <input type="number" id="age" name="age" placeholder="Age" required><br><br>
           
@@ -36,7 +36,7 @@
 
               </select><br><br>
           
-              <select id="blood-type" name="blood-type" required>
+              <select id="bloodtype" name="bloodtype" required>
                 <option value="">-- Blood Type --</option>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
@@ -55,7 +55,7 @@
               <input type="date" id="date" name="date" required><br><br>
           
               <div class="submit-container">
-              <input type="submit" value="Submit">
+              <input type="submit" name= "submit" value="Submit">
               </div>
             </form>
         </div>
