@@ -14,8 +14,12 @@
 
             $query = mysqli_query($conn,$sql);
             if($query){
+<<<<<<< HEAD
                 header("Location: Homepage.html");
                 exit;
+=======
+                echo '<h1 style="text-align: center">Your Entry is Successful</h1>';
+>>>>>>> 62f9c29ad1a1edb965efd06cd59aaccdaaed2e8f
             }
             else{
                 echo '<h1 style="text-align: center">There is a Error Occurred' . mysqli_error($conn) . 's</h1>';

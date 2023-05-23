@@ -91,6 +91,16 @@
       .content {
         margin-left: 0;
       }
+
+       .navlinks{
+            list-style: none;
+        }
+
+        .navlinks li{
+            display: inline-block;
+            padding: 0px 20px;
+        }
+
     }
     
   </style>
@@ -127,20 +137,28 @@
 <body>
   <header>
     <h1>BloodConnect</h1>
-    <a href="login.html" class="logout-button">Logout</a>
+    <a href="login.php" class="logout-button">Logout</a>
     <!--**login.html (sample of link to return to login file**-->
   </header>
   
   <div class="sidebar">
     <h2>Records</h2>
-    <ul>
+    <nav>
+      <ul class="navlinks">
       <li><a href="Homepage.html" class="button">Home</a></li>
+<<<<<<< HEAD:Hospital.html
       <!-- <li><a href="#" onclick="displayWelcomeMessage();" class="button">Admin</a></li> --> <!--**extre button for add-on**-->
       <li><a href="Donor.php" class="button">Donor</a></li> <!--**Will display the user forms**-->
       
       <li><a href="#" class="button">Patient</a></li> <!--**Login records or registers?**-->
+=======
+      <li><a href="Donor.php" class="button">Donor</a></li> <!--**Will display the user forms**-->
+>>>>>>> 62f9c29ad1a1edb965efd06cd59aaccdaaed2e8f:Admin.html
       <li><a href="#" onclick="displayRequests();" class="button">Blood Requests</a></li> <!--**Display lang**-->
+                <!-- <li><a href="#" onclick="displayWelcomeMessage();" class="button">Admin</a></li> --> <!--**extre button for add-on**-->
+                <!--<li><a href="#" class="button">Patient</a></li> **Login records or registers?**-->
     </ul>
+    </nav>
   </div>
   
   <div class="content" id="content">
