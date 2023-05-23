@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>BloodConnect</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: #b04759;
+      color: #fff;
+      padding: 20px;
+      text-align: left;
+      display: flex;
+      justify-content: space-between; /* Align items to the right */
+    }
+    
+    /* Sidebar Styles */
+    .sidebar {
+      background-color: #f4f4f4;
+      float: left;
+      width: 200px;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .sidebar h2 {
+      color: #333;
+    }
+    
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+    
+    /* Left Side Navigation Buttons */
+    .sidebar ul li a {
+      display: block;
+      padding: 10px;
+      background-color: #fff;
+      color: #333;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*w3chool shadow box*/
+      margin-bottom: 10px;
+    }
+    
+    .sidebar ul li a:hover {/* Animation of letter w3chool for more add on*/
+      color: #f1f1f1;
+    }
+    
+    /* Logout Button Styles */
+    .logout-button {
+      display: inline-block;
+      padding: 10px;
+      background-color: transparent;
+      color: #333;
+      text-decoration: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer; /*w3chool */
+    }
+
+    /* Main Content Styles */
+    .content {
+      padding: 20px;
+      box-sizing: border-box;
+      margin-left: 200px;
+    }
+    
+    /* Responsive Styles */
+    @media only screen and (max-width: 600px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        float: none;
+      }
+      
+      .content {
+        margin-left: 0;
+      }
+
+       .navlinks{
+            list-style: none;
+        }
+
+        .navlinks li{
+            display: inline-block;
+            padding: 0px 20px;
+        }
+
+    }
+    
+  </style>
+  <script>
+    // function displayWelcomeMessage() {
+    //   var contentElement = document.getElementById("content");
+    //   contentElement.innerHTML = "<h2>Welcome to the admin section!</h2><p>This is the main content area of the admin section.</p>";
+    // } **For estra purpose**
+    function displayRequests() {
+    var contentElement = document.getElementById("content");
+    var donorListHTML = "<h2> List of requesting Blood</h2>" +
+                        "<div class='donor-list'>" +
+                          "<div class='donor-card'>" +
+                            "<h3>Juan Dela Criz</h3>" +
+                            "<p>Blood Type: O+</p>" +
+                            "<p>Age: 30</p>" +
+                          "</div>" +
+                          "<div class='donor-card'>" +
+                            "<h3>Lorem De wat</h3>" +
+                            "<p>Blood Type: A-</p>" +
+                            "<p>Age: 25</p>" +
+                          "</div>" +
+                          "<div class='donor-card'>" +
+                            "<h3>Michael Jackson</h3>" +
+                            "<p>Blood Type: B+</p>" +
+                            "<p>Age: 35</p>" +
+                          "</div>" +
+                        "</div>";
+    contentElement.innerHTML = donorListHTML;
+  }
+
+  </script>
+</head>
+<body>
+  <header>
+    <h1>BloodConnect</h1>
+    <a href="login.php" class="logout-button">Logout</a>
+    <!--**login.html (sample of link to return to login file**-->
+  </header>
+  
+  <div class="sidebar">
+    <h2>Records</h2>
+    <nav>
+      <ul class="navlinks">
+      <li><a href="Homepage.html" class="button">Home</a></li>
+      <li><a href="Donor.php" class="button">Donor</a></li> <!--**Will display the user forms**-->
+      <li><a href="#" onclick="displayRequests();" class="button">Blood Requests</a></li> <!--**Display lang**-->
+                <!-- <li><a href="#" onclick="displayWelcomeMessage();" class="button">Admin</a></li> --> <!--**extre button for add-on**-->
+                <!--<li><a href="#" class="button">Patient</a></li> **Login records or registers?**-->
+    </ul>
+    </nav>
+  </div>
+  
+  <div class="content" id="content">
+    <h2>Welcome to the Admin or Hospital Database Center!</h2>
+    <p>This is the Hospital Admin.</p>
+  </div>
+</body>
+</html>
