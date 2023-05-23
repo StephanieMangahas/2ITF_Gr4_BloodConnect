@@ -27,7 +27,11 @@ if(isset($_POST['login'])){
                 exit();
             
             }else if ($row['username'] === $username && $row['password'] === $password && $row['typeID'] == '2' ) {
+<<<<<<< HEAD
                 header("Location: Hospital.html"); 
+=======
+                header("Location: Hospital.php"); 
+>>>>>>> 10d5637628d584ce620becf891aab7e7fafed61d
                 exit();
             
             }else if ($row['username'] === $username && $row['password'] === $password && $row['typeID'] == '3' ) {
